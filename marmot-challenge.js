@@ -18,27 +18,22 @@ itemElements.forEach(item=>{itemImages.push(item.querySelector('.item-image').qu
 
 
 // Create a trigger that activates when the user scrolls into the bottom 10% of the page.
-let last_known_scroll_position = 0;
-let ticking = false;
-
-function doSomething(scroll_pos) {
-  // console.log('scrolling? scrll pos = ', scroll_pos)
-  console.log(ticking)
-}
-
 window.addEventListener('scroll', function(e) {
 
-  last_known_scroll_position = window.scrollY;
-
-  if (last_known_scroll_position >= $('body').height()*0.9 || last_known_scroll_position -  <= window.scrollY-window.innerHeight ) {
+  if (window.scrollY >= $('body').height()*0.9 || $('body').height() - window.scrollY <= window.innerHeight ) {
+    console.log(`window.scrollY >= $('body').height()*0.9`)
+    window.scrollY >= $('body').height()*0.9 ? console.log('Scrolled into bottom 10% without hitting bottom of window') : console.log('scrolled to bottom')
 
   }
 
 });
 
-// The trigger should show a centered overlay on top of the site that displays the information gathered above and two buttons. One button should close the overlay and the other should take the user to the cart page. It should have a style consistent with the website. Design matters.
+// The trigger should show a centered overlay on top of the site that displays the information gathered above and two buttons.
+// One button should close the overlay and the other should take the user to the cart page.
+// It should have a style consistent with the website. Design matters.
 
-// Behind the overlay add a semi­transparent black background that obscures the site. The overlay should be able to trigger multiple times if dismissed.
+// Behind the overlay add a semi­transparent black background that obscures the site.
+// The overlay should be able to trigger multiple times if dismissed.
 
 
 // -----------------Tests-------------------
